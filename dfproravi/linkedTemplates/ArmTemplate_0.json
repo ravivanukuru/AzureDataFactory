@@ -1716,43 +1716,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/scheduled')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Execute Pipeline1",
-						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"policy": {
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "ingestion",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"schema": "source",
-								"table": "Orders"
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-04T00:22:21Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/ingestion')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Deltalake')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -1800,6 +1763,43 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/dataflows/deltaflow')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/scheduled')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"policy": {
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "ingestion",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {
+								"schema": "source",
+								"table": "Orders"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": [],
+				"lastPublishTime": "2026-02-04T00:22:21Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/ingestion')]"
 			]
 		}
 	]
