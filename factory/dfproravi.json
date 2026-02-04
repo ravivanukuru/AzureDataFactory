@@ -1,0 +1,9 @@
+{
+	"name": "dfproravi",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5173771f-7386-41f4-b5ea-54ee915ac436",
+		"tenantId": "f0c8ee84-0395-4542-9ac3-511d1405e789"
+	}
+}
