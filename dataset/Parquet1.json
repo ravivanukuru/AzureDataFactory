@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Orders",
+				"folderPath": "Orders1",
 				"fileSystem": "sink"
 			},
 			"compressionCodec": "snappy"
