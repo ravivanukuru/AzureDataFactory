@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "drivers",
 				"folderPath": "files",
 				"fileSystem": "source"
 			},
